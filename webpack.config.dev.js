@@ -1,8 +1,18 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports={
     mode:"development", //开发环境  打包出来的代码不压缩
-    entry:"./src/index.js",
+    entry:"./src/index.js",//入口文件
     //output 开发阶段暂时不用配置
+    resolve: {
+        // 别名
+        alias: {
+          "?": "./src",
+          "#": "./src/components",
+          "@": "./src/assets"
+        },
+        // 拓展名
+        extensions: [".jsx", ".js", ".json"]
+      },
     module:{
         rules: [
             {
@@ -14,7 +24,29 @@ module.exports={
                   presets: ['@babel/preset-react']
                 }
               }
-            }
+            },
+            {
+                test: /\.less$/,
+                use: [
+                  {
+                    loader: "style-loader" // creates style nodes from JS strings
+                  },
+                  {
+                    loader: "css-loader" // translates CSS into CommonJS
+                  },
+                  {
+                    loader: "less-loader" // compiles Less to CSS
+                  }
+                ]
+              },
+              {
+                test: /\.(png|jpg|gif|ttf|woff|woff2|eot|svg)$/i,
+                use: [
+                  {
+                    loader: "url-loader"
+                  }
+                ]
+              }
           ]
     },
     plugins:[
