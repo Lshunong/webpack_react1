@@ -4,6 +4,14 @@ import "./App.less"
 //导入组件
 import NoStateComponent from './components/NoStateComponent'
 import StateComponent from './components/StateComponent'
+import Counter from './components/Counter'
+import Grandpa from './components/Grandpa'
+import ConditionalAndFor from './components/ConditionalAndFor'
+import MyCheckbox from './components/MyCheckbox'
+import Book from './components/book/Book'
+import Basic from './components/router/Basic'
+
+
 
 const zhangsanStyle ={
     color:'green',
@@ -12,15 +20,27 @@ const zhangsanStyle ={
 
 //类组件(有状态组件)
 class App extends React.Component{
+    getChildValue = data =>{
+        console.log("---我是父组件---")
+        console.log(data)
+
+    }
+
     // render 是react的声明周期函数之一，用来渲染组件的内容
     render(){
         return <div>
-            <NoStateComponent/>
+            {/* <NoStateComponent name="张飞" sex ="男" age ={18} isMan = {true}/>
             <hr/>
-            <StateComponent/>
+            <StateComponent name="关羽" sex ="男" age ={18}/> */}
+            {/* <Counter initCount={15} callback={this.getChildValue}></Counter> */}
+            {/* <Grandpa/> */}
+            {/* <ConditionalAndFor/>> */}
+            {/* <MyCheckbox/> */}
+            {/* <Book/> */}
+            <Basic/>
         </div>
     }
-    render(){
+    render1(){
         return <div id="app">
             Hello React
             <div className="imgDiv"></div>

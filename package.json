@@ -1,7 +1,7 @@
 {
   "name": "webpack_react1",
   "version": "1.0.0",
-  "description": "",
+  "description": "使用webpack手工搭建react项目",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,11 +19,15 @@
   },
   "homepage": "https://github.com/Lshunong/webpack_react1#readme",
   "dependencies": {
+    "express": "^4.16.4",
+    "multer": "^1.4.1",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",

@@ -1,0 +1,12 @@
+table{
+    width: 600px;
+    /* 边框重合 */
+    border-collapse: collapse;
+    margin: 10px;
+
+}
+
+table th,table td{
+    text-align: center;
+    border: 1px solid black;
+}

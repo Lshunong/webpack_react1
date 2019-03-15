@@ -21,9 +21,22 @@ module.exports={
               use: {
                 loader: 'babel-loader',
                 options: {
-                  presets: ['@babel/preset-react']
+                  presets: ['@babel/preset-react'],
+                  //箭头函数配置
+                  plugins: ['@babel/plugin-proposal-class-properties']
                 }
               }
+            },
+            {
+              test: /\.css$/,
+              use: [
+                {
+                  loader: "style-loader" // creates style nodes from JS strings
+                },
+                {
+                  loader: "css-loader" // translates CSS into CommonJS
+                }
+              ]
             },
             {
                 test: /\.less$/,
