@@ -8,8 +8,22 @@ import Counter from './components/Counter'
 import Grandpa from './components/Grandpa'
 import ConditionalAndFor from './components/ConditionalAndFor'
 import MyCheckbox from './components/MyCheckbox'
-import Book from './components/book/Book'
+//import Book from './components/book/Book'
+//路由相关的组件
 import Basic from './components/router/Basic'
+
+//网络版图书销售
+import Book from './components/book_networking/Book'
+
+
+//购物车案例
+import Index from './components/Cart/redux/views/Index'
+
+//import Index from './components/Cart/react-redux/views/Index'
+
+
+// 热更新
+import { hot } from 'react-hot-loader/root'
 
 
 
@@ -37,7 +51,8 @@ class App extends React.Component{
             {/* <ConditionalAndFor/>> */}
             {/* <MyCheckbox/> */}
             {/* <Book/> */}
-            <Basic/>
+            {/* <Basic/> */}
+            <Index />
         </div>
     }
     render1(){
@@ -58,4 +73,4 @@ class App extends React.Component{
     }
 }
 
-export default App
+export default hot(App)

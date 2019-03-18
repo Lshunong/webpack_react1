@@ -32,7 +32,6 @@ export default class Index extends Component {
      this.setState({
       totalCount:this.calcTotalCount()
     })
-
     //监听仓库数据变化store.subscribe
     store.subscribe(()=>{
       //console.log('---仓库发生了变化------')
@@ -41,13 +40,6 @@ export default class Index extends Component {
         totalCount:this.calcTotalCount()
       })
     })
-
-    //监听window的onbeforeunload窗口卸载之前 先把获取到的数据存起来
-    //当浏览器关闭或者刷新时触发
-    window.onbeforeunload = ()=>{
-      //JSON.stringify转为字符串  去本地取到数据 本地再从仓库获取数据
-      localStorage.setItem('CART',JSON.stringify(store.getState()))
-    }
   }
 
   //把仓库数组取出来 获得购物车数量totalCount

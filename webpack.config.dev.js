@@ -13,6 +13,15 @@ module.exports={
         // 拓展名
         extensions: [".jsx", ".js", ".json"]
       },
+      //代理服务器跨域
+      devServer:{
+        proxy:{
+          '/':{
+            target:'http://127.0.0.1:3000', //发送给真正的服务器
+            secure:false //设置支持httpx协议的代理
+          }
+        }
+      },
     module:{
         rules: [
             {
@@ -23,7 +32,7 @@ module.exports={
                 options: {
                   presets: ['@babel/preset-react'],
                   //箭头函数配置
-                  plugins: ['@babel/plugin-proposal-class-properties']
+                  plugins: ['@babel/plugin-proposal-class-properties',"react-hot-loader/babel"]
                 }
               }
             },
